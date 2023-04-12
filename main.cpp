@@ -6,7 +6,8 @@
 #endif
 
 #include "include/callbacks/callback.h"
-
+#include "include/callbacks/signal.h"
+#include "include/callbacks/callback_handler.h"
 void test1() {
 #ifdef USE_COROUTINES
     ccflow::Core core;
@@ -16,26 +17,8 @@ void test1() {
 #endif
 }
 
-struct MyVal {};
 
-class Handler {
-public:
-    Handler() = default;
-    void onSignalReceive() {
-    }
-    void onSlotReceive() {
-        std::cout << "DONE";
-    }
-};
-
-
-void test2() {
-    Handler *obj = new Handler();
-    connect(obj, obj, &Handler::onSlotReceive);
-    delete obj;
-}
 
 int main() {
-    test2();
     return 0;
 }
