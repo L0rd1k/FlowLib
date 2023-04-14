@@ -36,5 +36,4 @@ TEST(CallbacksSamples, ConnectTest2) {
 }
 
 TEST(CallbacksSamples, ConnectTest3) {
-    
 }

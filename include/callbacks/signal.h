@@ -15,9 +15,6 @@ public:
             elem->run(std::forward<SignalArgs>(args)...);
         }
     }
-
-public:
-    std::mutex mtx_;
 };
 
 }  // namespace ccflow
