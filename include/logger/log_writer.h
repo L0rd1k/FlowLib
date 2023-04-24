@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string_view>
 
-#include "include/date_time.h"
+#include "include/utils/date_time.h"
 #include "include/logger/log_list.h"
 
 namespace ccflow {
@@ -13,7 +13,7 @@ namespace Watch {
 
 class LogWriter : public LogList {
 public:
-    LogWriter() : LogList(100, 1000) {
+    LogWriter() : LogList(1000000, 100000000) {
         init("logs");
         openFile("logs/" + getCurrentDateTime());
     }
