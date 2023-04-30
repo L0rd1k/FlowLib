@@ -40,6 +40,7 @@ public:
         file_ << str;
         entries.back().size += str.size();
         totalFolderSize_ += str.size();
+        return true;
     }
 
     void pushFile() {
@@ -57,7 +58,11 @@ public:
     }
 
     bool closeFile() {
-        file_.close();
+        if(file_.is_open()) {
+            file_.close();
+            return true;
+        }
+        return false;
     }
 
 private:

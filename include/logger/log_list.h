@@ -33,6 +33,7 @@ protected:
             elem.size = getFileSize(elem.name);
             totalFolderSize_ += elem.size;
         }
+        return true;
     }
 
     void getFiles(std::vector<LogInfo>& vec, const std::string& str) {
